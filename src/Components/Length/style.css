@@ -1,0 +1,6 @@
+.mytooltip {	
+  position: absolute;			
+  text-align: center;									
+  font: 16px sans-serif;	
+  pointer-events: none;
+}

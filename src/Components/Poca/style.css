@@ -1,0 +1,10 @@
+.mytooltip {	
+  position: absolute;			
+  text-align: center;									
+  font: 16px sans-serif;	
+  pointer-events: none;
+  text-shadow: -1px 1px 0 #fff,
+				  1px 1px 0 #fff,
+				 1px -1px 0 #fff,
+				-1px -1px 0 #fff;	
+}
