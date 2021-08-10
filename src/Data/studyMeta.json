@@ -10,367 +10,33 @@
       "attributes": [
         {
           "label": "Participant ID",
-          "Type": "text"
+          "type": "text"
         },
         {
           "label": "Participant Name",
-          "Type": "text"
+          "type": "text"
         },
         {
           "label": "Participant Age",
-          "Type": "text"
+          "type": "text"
         },
         {
           "label": "Participant Grade",
-          "Type": "text"
+          "type": "text"
         },
         {
           "label": "Participant Gender",
-          "Type": "text"
+          "type": "combobox",
+          "options":["Female", "Male", "Non-binary/third gender", "Don't wish to answer"]
         },
         {
           "label": "Participant Race",
-          "Type": "text"
+          "type": "combobox",
+          "options":["Latino or Hispanic", "Native American Indian or Alaskan Indian", "Asian", "Black or African American", "Native Hawaiian or Pacific Islander", "White", "Unknown", "Don't wish to answer"]
         },
         {
           "label": "Participant School",
-          "Type": "text"
-        }
-      ]
-    },
-    {
-      "title": "Explanation 1",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/explanation1.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Explanation 2",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/explanation2.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Explanation 3",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/explanation3.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "POCA 1",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/POCA1.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "POCA Practice",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/POCAPractice.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "POCA 2",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/POCA2.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "POCA 3",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/POCA3.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "POCA 4",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/POCA4.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "POUA 1",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/POUA1.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "POUA Practice",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/POUAPractice.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "POUA 2",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/POUA2.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "POUA 3",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/POUA3.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "POUA 4",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/POUA4.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Length 1",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Length1.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Length Practice",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/LengthPractice.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Length 2",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Length2.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Length 3",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Length3.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Length 4",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Length4.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Angle 1",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Angle1.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Angle Practice",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/AnglePractice.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Angle 2",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Angle2.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Angle 3",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Angle3.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Angle 4",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Angle4.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Area 1",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Area1.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Area Practice",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/AreaPractice.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Area 2",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Area2.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Area 3",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Area3.png",
-            "width": 800,
-            "caption":""
-          }
-        }
-      ]
-    },
-    {
-      "title": "Area 4",
-      "type": "Information",
-      "html": [
-        { "image": {
-            "src":"practiceImages/Area4.png",
-            "width": 800,
-            "caption":""
-          }
+          "type": "text"
         }
       ]
     },
@@ -379,10 +45,44 @@
       "type": "Information",
       "html": [
         {"p": "Hey, thanks for helping us out today."},
-        {"p":"Your going to answer some question now just like the ones we practiced. There are no right or wrong answers so just answer them as quick as you can with your best guess. "},
-        {"p":"After you answer each question hit the “Next” button in the bottom right corner. There will be five sections total to go through. When you see a page that says “All Done” call Amy over. "},
-        {"p":"Remember, you are being a huge help and if you want to stop or need a break for any reason just tell Amy. "},
-        {"p":"When your ready, hit the start button to begin. "}
+        {"p":" You’re going to start by answering some practice questions. There are no right or wrong answers so just answer them as quickly as you can with your best guess. Type in your answers in the boxes provided and hit next. The answers are between 1 and 100.  "}
+      ]
+    },
+    {
+      "type": "Practice",
+      "position": 0,
+      "storeValues":  ["type"],
+      "valuesUsed": ["proportionOrder", "sizes", "Question"]
+    },
+    {
+      "type": "Practice",
+      "position": 1,
+      "storeValues":  ["type"],
+      "valuesUsed": ["proportionOrder", "sizes", "Question"]
+    },
+    {
+      "type": "Practice",
+      "position": 2,
+      "storeValues":  ["type"],
+      "valuesUsed": ["proportionOrder", "sizes", "Question"]
+    },
+    {
+      "type": "Practice",
+      "position": 3,
+      "storeValues":  ["type"],
+      "valuesUsed": ["proportionOrder", "sizes", "Question"]
+    },
+    {
+      "type": "Practice",
+      "position": 4,
+      "storeValues":  ["type"],
+      "valuesUsed": ["proportionOrder", "sizes", "Question"]
+    },
+    {
+      "title": "",
+      "type": "Check",
+      "html":[
+        {"p": "You have completed the practice portion of the study. The next part will be the part of the study used for our analysis. Answer each question as accurately and quickly as you can. After you answer each question, hit the “Next” button in the bottom right corner. There will be five sections total to go through. When you see a page that says “All Done” you have finished the study. When your responses are received an email will be sent to you with the information to use your $20 Tango rewards card. When you are ready, hit start."}
       ]
     },
     {
@@ -452,12 +152,21 @@
       "valuesUsed": ["proportionOrder", "sizes", "Question"]
     },
     {
-      "title": "All Done. Please tell Amy that you are finished.",
+      "title": "All Done!",
       "type": "Information",
       "finish": true,
       "html": [
         {"p":"You are done with section 5 of 5!"},
-        {"p":"That is all the sections!! Thank you for help."}
+        {"p":"Thank you for completing the study! We will email you soon with your rewards card."}
+      ]
+    },
+    {
+      "title": "Sorry!",
+      "type": "Information",
+      "finish": true,
+      "html": [
+        {"p":"Looks like you didn't due to well with the study!"},
+        {"p":"You can try again by refreshing the browers."}
       ]
     }
   ]

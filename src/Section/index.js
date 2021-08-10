@@ -1,9 +1,13 @@
 import React from "react";
 import studyData from "../Data/studyData.json";
 import studyMeta from "../Data/studyMeta.json";
+import practiceQuestions from "../Data/dataForPractice.json";
 import Pages from "./Pages/Pages";
 import { MyContainer, MyDiv, MyProgressBar } from "./style";
 import { Navbar } from "react-bootstrap";
+import nodemailer from "nodemailer";
+
+require("dotenv").config({ path: "./email.env" });
 
 class Section extends React.Component {
   state = {
@@ -12,17 +16,26 @@ class Section extends React.Component {
     progress: 0,
     currSession: { currPage: 0, id: 0, questionIndex: 0 },
     answers: [],
+    practiceAnswers: [],
     results: [],
+    practiceQuestions: [],
   };
 
   componentDidMount() {
     const data = studyData;
     const siteStructure = studyMeta;
-    this.setState({ data: data, siteStructure: siteStructure });
+    const practice = practiceQuestions[0];
+    this.setState({
+      data: data,
+      siteStructure: siteStructure,
+      practiceQuestions: practice,
+    });
     const progress = localStorage.getItem("Progress");
     const progressLabel = localStorage.getItem("ProgressLabel");
     const currSession = localStorage.getItem("currSession");
     const answers = localStorage.getItem("answers");
+    const practiceAnswers = localStorage.getItem("practiceAnswers");
+
     if (progress) {
       this.setState({ progress: progress });
     }
@@ -37,6 +50,9 @@ class Section extends React.Component {
     if (answers) {
       this.setState({ answers: JSON.parse(answers) });
     }
+    if (practiceAnswers) {
+      this.setState({ practiceAnswers: JSON.parse(practiceAnswers) });
+    }
   }
 
   calculateAccuracy = () => {
@@ -46,7 +62,7 @@ class Section extends React.Component {
     if (dataAnswer === undefined) {
       return;
     }
-    console.log(dataAnswer);
+
     dataAnswer.map((type, index) => {
       const currType = type.type;
       let total = 0.0;
@@ -70,24 +86,19 @@ class Section extends React.Component {
     const currSession = this.state.currSession;
     currSession.currPage += 1;
     currSession.questionIndex = 0;
-    // const currType = this.state.siteStructure.pages[currSession.currPage].type;
-    // if (currType === "Section") {
     this.setProgressBar(0, "");
-    // } else {
-    //   this.setProgressBar(
-    //     "Page " +
-    //       (currSession.currPage / (this.state.siteStructure.pages.length - 1)) *
-    //         100,
-    //     currSession.currPage +
-    //       " / " +
-    //       (this.state.siteStructure.pages.length - 1)
-    //   );
-    // }
+
+    const page = this.state.siteStructure.pages[currSession.currPage];
+    if (page.type === "Check") {
+      if (!this.checkPracticeQuestions()) {
+        currSession.currPage = this.state.siteStructure.pages.length - 1;
+      }
+    }
+
     localStorage.setItem("currSession", JSON.stringify(currSession));
     this.setState({ currSession: currSession });
-    if (this.state.siteStructure.pages.length - 1 === currSession.currPage) {
+    if (page.finish && page.finish === true) {
       this.exportStudy();
-      this.calculateAccuracy();
     }
   };
 
@@ -112,6 +123,34 @@ class Section extends React.Component {
     this.setState({ currSession: currSession });
   };
 
+  checkPracticeQuestions = () => {
+    //group similar properties
+    const answers = this.state.practiceAnswers;
+    let grouping = {};
+    for (let answer of answers) {
+      const type = answer[0].split(",")[0];
+      if (type in grouping) {
+        grouping[type].push(answer);
+      } else {
+        grouping[type] = [answer];
+      }
+    }
+    for (const [, lst] of Object.entries(grouping)) {
+      let incorrect = 0;
+      for (const answer of lst) {
+        const portion = answer[0].split(",")[1];
+        const results = parseInt(answer[1]);
+        if (Math.abs(results - portion * 100) >= 30) {
+          incorrect++;
+        }
+      }
+      if (incorrect > 1) {
+        return false;
+      }
+    }
+    return true;
+  };
+
   grabInformation = (data) => {
     console.log("grab Information");
     const currSession = this.state.currSession;
@@ -132,9 +171,16 @@ class Section extends React.Component {
     return Promise.resolve(newAnswers);
   };
 
+  savePracticeAnswer = (field, answer) => {
+    const newAnswers = this.state.practiceAnswers.slice();
+    newAnswers.push([field, answer]);
+    localStorage.setItem("practiceAnswers", JSON.stringify(newAnswers));
+    this.setState({ practiceAnswers: newAnswers });
+    return Promise.resolve(newAnswers);
+  };
+
   exportStudy = () => {
     this.calculateAccuracy();
-    var FileSaver = require("file-saver");
 
     let jsonFile = {
       session: this.state.currSession,
@@ -142,9 +188,24 @@ class Section extends React.Component {
     };
 
     var jsonse = JSON.stringify(jsonFile, null, 2);
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USERNAME, // generated ethereal user
+        pass: process.env.EMAIL_PASSWORD, // generated ethereal password
+      },
+    });
 
-    var blob = new Blob([jsonse], { type: "application/json" });
-    FileSaver.saveAs(blob, "user" + this.state.currSession.id + ".json");
+    // send mail with defined transport object
+    transporter.sendMail({
+      from: "GP Adult Study <panavas.l@northeastern.edu>", // sender address
+      to: "panavas.l@northeastern.edu", // list of receivers
+      subject: this.state.currSession.id + " Study", // Subject line
+      text: jsonse, // plain text body
+    });
+    // var blob = new Blob([jsonse], { type: "application/json" });
+    // FileSaver.saveAs(blob, "user" + this.state.currSession.id + ".json");
   };
 
   render() {
@@ -170,8 +231,10 @@ class Section extends React.Component {
                 ? this.state.currSession.id
                 : undefined
             }
+            practiceQuestions={this.state.practiceQuestions}
             grabInformation={this.grabInformation}
             saveAnswer={this.saveAnswer}
+            savePracticeAnswer={this.savePracticeAnswer}
             nextPage={this.nextPage}
             nextQuestion={this.nextQuestion}
             exportStudy={this.exportStudy}

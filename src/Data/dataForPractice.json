@@ -1,0 +1,295 @@
+{
+    "0": [
+        {
+            "type": "POCA",
+            "proportionOrder": [
+                0.6,
+                0.25,
+                0.5,
+                0.75
+            ],
+            "sizes": [
+                [
+                    431,
+                    258,
+                    0
+                ],
+                [
+                    314,
+                    78,
+                    0
+                ],
+                [
+                    368,
+                    184,
+                    0
+                ],
+                [
+                    363,
+                    272,
+                    0
+                ]
+            ],
+            "answerType": "text",
+            "answerName": [
+                [
+                    "POCA",
+                    0.6
+                ],
+                [
+                    "POCA",
+                    0.25
+                ],
+                [
+                    "POCA",
+                    0.5
+                ],
+                [
+                    "POCA",
+                    0.75
+                ]
+            ],
+            "Question": "The one marked with a 100 is 100 blocks high. How high is the one marked with a ?. Type your answer below.",
+            "Domain": [
+                0,
+                500
+            ]
+        },
+        {
+            "type": "POUA",
+            "proportionOrder": [
+                0.4,
+                0.55,
+                0.2,
+                0.8
+            ],
+            "sizes": [
+                [
+                    267,
+                    106,
+                    0
+                ],
+                [
+                    208,
+                    114,
+                    1
+                ],
+                [
+                    150,
+                    30,
+                    0
+                ],
+                [
+                    203,
+                    162,
+                    0
+                ]
+            ],
+            "answerType": "text",
+            "answerName": [
+                [
+                    "POUA",
+                    0.4
+                ],
+                [
+                    "POUA",
+                    0.55
+                ],
+                [
+                    "POUA",
+                    0.2
+                ],
+                [
+                    "POUA",
+                    0.8
+                ]
+            ],
+            "Question": "The one marked with a 100 is 100 blocks high. How high is the one marked with a ?. Type your answer below.",
+            "Domain": [
+                0,
+                300
+            ]
+        },
+        {
+            "type": "Length",
+            "proportionOrder": [
+                0.7,
+                0.3,
+                0.65,
+                0.1
+            ],
+            "sizes": [
+                [
+                    269,
+                    188,
+                    0,
+                    160,
+                    88
+                ],
+                [
+                    444,
+                    133,
+                    1,
+                    54,
+                    351
+                ],
+                [
+                    341,
+                    221,
+                    1,
+                    152,
+                    102
+                ],
+                [
+                    331,
+                    33,
+                    1,
+                    167,
+                    331
+                ]
+            ],
+            "answerType": "text",
+            "answerName": [
+                [
+                    "Length",
+                    0.7
+                ],
+                [
+                    "Length",
+                    0.3
+                ],
+                [
+                    "Length",
+                    0.65
+                ],
+                [
+                    "Length",
+                    0.1
+                ]
+            ],
+            "Question": "The one marked with a 100 is 100 blocks long. How long is the one marked with a ?. Type your answer below.",
+            "Domain": [
+                0,
+                500
+            ]
+        },
+        {
+            "type": "Angle",
+            "proportionOrder": [
+                0.2,
+                0.9,
+                0.45,
+                0.65
+            ],
+            "sizes": [
+                [
+                    94,
+                    18,
+                    0,
+                    156,
+                    60
+                ],
+                [
+                    146,
+                    131,
+                    1,
+                    214,
+                    8
+                ],
+                [
+                    145,
+                    65,
+                    0,
+                    292,
+                    258
+                ],
+                [
+                    82,
+                    53,
+                    1,
+                    254,
+                    135
+                ]
+            ],
+            "answerType": "text",
+            "answerName": [
+                [
+                    "Angle",
+                    0.2
+                ],
+                [
+                    "Angle",
+                    0.9
+                ],
+                [
+                    "Angle",
+                    0.45
+                ],
+                [
+                    "Angle",
+                    0.65
+                ]
+            ],
+            "Question": "The one marked with a 100 is 100 blocks wide. How wide is the one marked with a ?. Type your answer below.",
+            "Domain": [
+                0,
+                150
+            ]
+        },
+        {
+            "type": "Area",
+            "proportionOrder": [
+                0.5,
+                0.05,
+                0.7,
+                0.9
+            ],
+            "sizes": [
+                [
+                    114,
+                    80.61017305526642,
+                    1
+                ],
+                [
+                    107,
+                    23.92592735924775,
+                    1
+                ],
+                [
+                    109,
+                    91.19594289221423,
+                    1
+                ],
+                [
+                    119,
+                    112.89331246801115,
+                    0
+                ]
+            ],
+            "answerType": "text",
+            "answerName": [
+                [
+                    "Area",
+                    0.5
+                ],
+                [
+                    "Area",
+                    0.05
+                ],
+                [
+                    "Area",
+                    0.7
+                ],
+                [
+                    "Area",
+                    0.9
+                ]
+            ],
+            "Question": "The one marked with a 100 is 100 blocks big. How big is the one marked with a ?. Type your answer below.",
+            "Domain": [
+                0,
+                132
+            ]
+        }
+    ]
+}

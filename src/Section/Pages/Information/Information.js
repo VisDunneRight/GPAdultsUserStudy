@@ -60,7 +60,7 @@ const TypeSwitch = ({ data }) => {
 
 const Information = ({ page, nextPage, exportStudy, results }) => {
   if (page.finish === true) {
-    // localStorage.clear();
+    localStorage.clear();
   }
   return (
     <>
@@ -81,8 +81,8 @@ const Information = ({ page, nextPage, exportStudy, results }) => {
           </MyRow>
           <MyRow>
             <Col>
-              <Button variant="secondary" onClick={exportStudy}>
-                Download File
+              <Button variant="secondary" disabled>
+                Done
               </Button>{" "}
             </Col>
           </MyRow>

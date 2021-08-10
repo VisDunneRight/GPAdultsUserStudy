@@ -24,6 +24,7 @@ const Section = ({ page, data, saveAnswer, nextQuestion, questionIndex }) => {
       return;
     }
     const answerName = data.answerName[questionIndex].toString();
+    console.log(saveAnswer);
     saveAnswer(answerName, answer).then(function (response) {
       setAnswer("");
       nextQuestion(array.length);

@@ -2,6 +2,34 @@ import { Button, Form, Col } from "react-bootstrap";
 import { useState } from "react";
 import { MyRow } from "./style";
 
+const Options = ({ property, values, onChange }) => {
+  if (property.type === "text") {
+    return (
+      <Form.Control
+        type="text"
+        value={values[property.label]}
+        onChange={(e) => onChange(property.label, e.target.value)}
+        placeholder={property.label}
+      />
+    );
+  } else if (property.type === "combobox") {
+    return (
+      <Form.Control
+        as="select"
+        name="selected"
+        onChange={(e) => onChange(property.label, e.target.value)}
+        value={values[property.label]}
+      >
+        {property.options.map((item, index) => (
+          <option key={index} value={item}>
+            {item}
+          </option>
+        ))}
+      </Form.Control>
+    );
+  }
+};
+
 const Demographics = ({ page, nextPage, grabInformation }) => {
   const [values, setValues] = useState({});
 
@@ -11,6 +39,7 @@ const Demographics = ({ page, nextPage, grabInformation }) => {
     nextPage();
   }
   function onChange(fieldId, value) {
+    console.log(value);
     setValues((currentValues) => {
       currentValues[fieldId] = value;
       return currentValues;
@@ -29,12 +58,7 @@ const Demographics = ({ page, nextPage, grabInformation }) => {
               <Form.Label>{row.label}</Form.Label>
             </Col>
             <Col lg="2">
-              <Form.Control
-                type="text"
-                value={values[row.label]}
-                onChange={(e) => onChange(row.label, e.target.value)}
-                placeholder={row.label}
-              />
+              <Options property={row} onChange={onChange} values={values} />
             </Col>
           </Form.Group>
         ))}
