@@ -7,9 +7,10 @@
     {
       "title": "Welcome Participant",
       "type": "Demographic",
+
       "attributes": [
         {
-          "label": "Participant ID",
+          "label": "Participant ID (In email)",
           "type": "text"
         },
         {
@@ -20,10 +21,7 @@
           "label": "Participant Age",
           "type": "text"
         },
-        {
-          "label": "Participant Grade",
-          "type": "text"
-        },
+      
         {
           "label": "Participant Gender",
           "type": "combobox",
@@ -33,10 +31,6 @@
           "label": "Participant Race",
           "type": "combobox",
           "options":["Latino or Hispanic", "Native American Indian or Alaskan Indian", "Asian", "Black or African American", "Native Hawaiian or Pacific Islander", "White", "Unknown", "Don't wish to answer"]
-        },
-        {
-          "label": "Participant School",
-          "type": "text"
         }
       ]
     },
@@ -165,8 +159,9 @@
       "type": "Information",
       "finish": true,
       "html": [
-        {"p":"Looks like you didn't due to well with the study!"},
-        {"p":"You can try again by refreshing the browers."}
+        {"p":"Sorry, based off your practice round results we cannot let you participate in the study. "},
+        {"p":"Thank you for your time."},
+        {"p":"Please email panavas.l@northeastern.edu if you have any questions"}
       ]
     }
   ]

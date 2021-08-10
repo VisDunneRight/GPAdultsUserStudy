@@ -89,6 +89,7 @@ class Section extends React.Component {
     this.setProgressBar(0, "");
 
     const page = this.state.siteStructure.pages[currSession.currPage];
+
     if (page.type === "Check") {
       if (!this.checkPracticeQuestions()) {
         currSession.currPage = this.state.siteStructure.pages.length - 1;
