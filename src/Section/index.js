@@ -6,8 +6,7 @@ import Pages from "./Pages/Pages";
 import { MyContainer, MyDiv, MyProgressBar } from "./style";
 import { Navbar } from "react-bootstrap";
 import nodemailer from "nodemailer";
-
-require("dotenv").config({ path: "./email.env" });
+import emailjs from "emailjs-com";
 
 class Section extends React.Component {
   state = {
@@ -189,24 +188,25 @@ class Section extends React.Component {
     };
 
     var jsonse = JSON.stringify(jsonFile, null, 2);
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USERNAME, // generated ethereal user
-        pass: process.env.EMAIL_PASSWORD, // generated ethereal password
-      },
-    });
+    var templateParams = {
+      message: jsonse,
+    };
 
-    // send mail with defined transport object
-    transporter.sendMail({
-      from: "GP Adult Study <panavas.l@northeastern.edu>", // sender address
-      to: "panavas.l@northeastern.edu", // list of receivers
-      subject: this.state.currSession.id + " Study", // Subject line
-      text: jsonse, // plain text body
-    });
-    // var blob = new Blob([jsonse], { type: "application/json" });
-    // FileSaver.saveAs(blob, "user" + this.state.currSession.id + ".json");
+    emailjs
+      .send(
+        "service_uqj09id",
+        "template_x7pswr4",
+        templateParams,
+        "user_Kx3a55DXNWeuop9rui5RR"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
   };
 
   render() {
