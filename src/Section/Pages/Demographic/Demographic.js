@@ -6,6 +6,7 @@ const Options = ({ property, values, onChange }) => {
   if (property.type === "text") {
     return (
       <Form.Control
+        required
         type="text"
         value={values[property.label]}
         onChange={(e) => onChange(property.label, e.target.value)}
@@ -15,6 +16,7 @@ const Options = ({ property, values, onChange }) => {
   } else if (property.type === "combobox") {
     return (
       <Form.Control
+        required
         as="select"
         name="selected"
         onChange={(e) => onChange(property.label, e.target.value)}

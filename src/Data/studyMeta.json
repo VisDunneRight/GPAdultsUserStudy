@@ -1,7 +1,7 @@
 {
   "meta": {
     "progressbarSection": true,
-    "sessionID" : "Participant ID"
+    "sessionID": "Participant ID"
   },
   "pages": [
     {
@@ -21,16 +21,32 @@
           "label": "Participant Age",
           "type": "text"
         },
-      
+
         {
           "label": "Participant Gender",
           "type": "combobox",
-          "options":["Female", "Male", "Non-binary/third gender", "Don't wish to answer"]
+          "options": [
+            "Pick one",
+            "Female",
+            "Male",
+            "Non-binary/third gender",
+            "Don't wish to answer"
+          ]
         },
         {
           "label": "Participant Race",
           "type": "combobox",
-          "options":["Latino or Hispanic", "Native American Indian or Alaskan Indian", "Asian", "Black or African American", "Native Hawaiian or Pacific Islander", "White", "Unknown", "Don't wish to answer"]
+          "options": [
+            "Pick one",
+            "Latino or Hispanic",
+            "Native American Indian or Alaskan Indian",
+            "Asian",
+            "Black or African American",
+            "Native Hawaiian or Pacific Islander",
+            "White",
+            "Unknown",
+            "Don't wish to answer"
+          ]
         }
       ]
     },
@@ -38,111 +54,123 @@
       "title": "",
       "type": "Information",
       "html": [
-        {"p": "Hey, thanks for helping us out today."},
-        {"p":" You’re going to start by answering some practice questions. There are no right or wrong answers so just answer them as quickly as you can with your best guess. Type in your answers in the boxes provided and hit next. The answers are between 1 and 100.  "}
+        { "p": "Hey, thanks for helping us out today." },
+        {
+          "p": " You’re going to start by answering some practice questions. There are no right or wrong answers so just answer them as quickly as you can with your best guess. Type in your answers in the boxes provided and hit next. The answers are between 1 and 100.  "
+        }
       ]
     },
     {
       "type": "Practice",
       "position": 0,
-      "storeValues":  ["type"],
+      "storeValues": ["type"],
       "valuesUsed": ["proportionOrder", "sizes", "Question"]
     },
     {
       "type": "Practice",
       "position": 1,
-      "storeValues":  ["type"],
+      "storeValues": ["type"],
       "valuesUsed": ["proportionOrder", "sizes", "Question"]
     },
     {
       "type": "Practice",
       "position": 2,
-      "storeValues":  ["type"],
+      "storeValues": ["type"],
       "valuesUsed": ["proportionOrder", "sizes", "Question"]
     },
     {
       "type": "Practice",
       "position": 3,
-      "storeValues":  ["type"],
+      "storeValues": ["type"],
       "valuesUsed": ["proportionOrder", "sizes", "Question"]
     },
     {
       "type": "Practice",
       "position": 4,
-      "storeValues":  ["type"],
+      "storeValues": ["type"],
       "valuesUsed": ["proportionOrder", "sizes", "Question"]
     },
     {
       "title": "",
       "type": "Check",
-      "html":[
-        {"p": "You have completed the practice portion of the study. The next part will be the part of the study used for our analysis. Answer each question as accurately and quickly as you can. After you answer each question, hit the “Next” button in the bottom right corner. There will be five sections total to go through. When you see a page that says “All Done” you have finished the study. When your responses are received an email will be sent to you with the information to use your $20 Tango rewards card. When you are ready, hit start."}
+      "html": [
+        {
+          "p": "You have completed the practice portion of the study. The next part will be the part of the study used for our analysis. Answer each question as accurately and quickly as you can. After you answer each question, hit the “Next” button in the bottom right corner. There will be five sections total to go through. When you see a page that says “All Done” you have finished the study. When your responses are received an email will be sent to you with the information to use your $20 Tango rewards card. When you are ready, hit start."
+        }
       ]
     },
     {
       "type": "Section",
       "position": 0,
-      "storeValues":  ["type"],
+      "storeValues": ["type"],
       "valuesUsed": ["proportionOrder", "sizes", "Question"]
     },
     {
       "title": "",
       "type": "Information",
       "html": [
-        {"p":"You are done with section 1 of 5!."},
-        {"p":"Feel free to take a short break and relax for a little bit."},
-        {"p":"When you are ready, click the start button below to begin section 2 of 5."}
+        { "p": "You are done with section 1 of 5!." },
+        { "p": "Feel free to take a short break and relax for a little bit." },
+        {
+          "p": "When you are ready, click the start button below to begin section 2 of 5."
+        }
       ]
     },
     {
       "type": "Section",
       "position": 1,
-      "storeValues":  ["type"],
+      "storeValues": ["type"],
       "valuesUsed": ["proportionOrder", "sizes", "Question"]
     },
     {
       "title": "",
       "type": "Information",
       "html": [
-        {"p":"You are done with section 2 of 5!"},
-        {"p":"Feel free to take a short break and relax for a little bit."},
-        {"p":"When you are ready, click the start button below to begin section 3 of 5."}
+        { "p": "You are done with section 2 of 5!" },
+        { "p": "Feel free to take a short break and relax for a little bit." },
+        {
+          "p": "When you are ready, click the start button below to begin section 3 of 5."
+        }
       ]
     },
     {
       "type": "Section",
       "position": 2,
-      "storeValues":  ["type"],
+      "storeValues": ["type"],
       "valuesUsed": ["proportionOrder", "sizes", "Question"]
     },
     {
       "title": "",
       "type": "Information",
       "html": [
-        {"p":"You are done with section 3 of 5!"},
-        {"p":"Feel free to take a short break and relax for a little bit."},
-        {"p":"When you are ready, click the start button below to begin section 4 of 5."}
+        { "p": "You are done with section 3 of 5!" },
+        { "p": "Feel free to take a short break and relax for a little bit." },
+        {
+          "p": "When you are ready, click the start button below to begin section 4 of 5."
+        }
       ]
     },
     {
       "type": "Section",
       "position": 3,
-      "storeValues":  ["type"],
+      "storeValues": ["type"],
       "valuesUsed": ["proportionOrder", "sizes", "Question"]
     },
     {
       "title": "",
       "type": "Information",
       "html": [
-        {"p":"You are done with section 4 of 5!"},
-        {"p":"Feel free to take a short break and relax for a little bit."},
-        {"p":"When you are ready, click the start button below to begin section 5 of 5."}
+        { "p": "You are done with section 4 of 5!" },
+        { "p": "Feel free to take a short break and relax for a little bit." },
+        {
+          "p": "When you are ready, click the start button below to begin section 5 of 5."
+        }
       ]
     },
     {
       "type": "Section",
       "position": 4,
-      "storeValues":  ["type"],
+      "storeValues": ["type"],
       "valuesUsed": ["proportionOrder", "sizes", "Question"]
     },
     {
@@ -150,8 +178,10 @@
       "type": "Information",
       "finish": true,
       "html": [
-        {"p":"You are done with section 5 of 5!"},
-        {"p":"Thank you for completing the study! We will email you soon with your rewards card."}
+        { "p": "You are done with section 5 of 5!" },
+        {
+          "p": "Thank you for completing the study! We will email you soon with your rewards card."
+        }
       ]
     },
     {
@@ -159,9 +189,13 @@
       "type": "Information",
       "finish": true,
       "html": [
-        {"p":"Sorry, based off your practice round results we cannot let you participate in the study. "},
-        {"p":"Thank you for your time."},
-        {"p":"Please email panavas.l@northeastern.edu if you have any questions"}
+        {
+          "p": "Sorry, based off your practice round results we cannot let you participate in the study. "
+        },
+        { "p": "Thank you for your time." },
+        {
+          "p": "Please email panavas.l@northeastern.edu if you have any questions"
+        }
       ]
     }
   ]
