@@ -10,7 +10,7 @@
 
       "attributes": [
         {
-          "label": "Participant ID (In email)",
+          "label": "Participant ID",
           "type": "text"
         },
         {
