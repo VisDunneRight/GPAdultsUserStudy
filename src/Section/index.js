@@ -157,7 +157,7 @@ class Section extends React.Component {
     currSession.demographic = data;
     const sessionID = this.state.siteStructure.meta.sessionID;
     if (sessionID in data) {
-      currSession.id = data[sessionID];
+      currSession.id = data[sessionID] % 38;
     }
     localStorage.setItem("currSession", JSON.stringify(currSession));
     this.setState({ currSession: currSession });
@@ -208,7 +208,6 @@ class Section extends React.Component {
         }
       );
   };
-
   render() {
     return (
       <MyDiv>
