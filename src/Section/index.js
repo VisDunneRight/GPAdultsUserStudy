@@ -89,11 +89,11 @@ class Section extends React.Component {
 
     const page = this.state.siteStructure.pages[currSession.currPage];
 
-    if (page.type === "Check") {
-      if (!this.checkPracticeQuestions()) {
-        currSession.currPage = this.state.siteStructure.pages.length - 1;
-      }
-    }
+    // if (page.type === "Check") {
+    //   if (!this.checkPracticeQuestions()) {
+    //     currSession.currPage = this.state.siteStructure.pages.length - 1;
+    //   }
+    // }
 
     localStorage.setItem("currSession", JSON.stringify(currSession));
     this.setState({ currSession: currSession });
