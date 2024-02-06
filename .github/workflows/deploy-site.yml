@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Adjust if your default branch has a different name
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js (Latest Version)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Adjust according to the latest stable Node.js version you're using
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build  # Assumes your build script is correctly set up in package.json
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # The branch the action should deploy to
+          folder: build  # The folder the action should deploy
+          token: ${{ secrets.GITHUB_TOKEN }}  # Utilizes the GITHUB_TOKEN secret for authentication
